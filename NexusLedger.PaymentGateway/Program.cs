@@ -1,12 +1,15 @@
-using ApexLedger.ServiceDefaults;
+using NexusLedger.ServiceDefaults;
+using NexusLedger.PaymentGateway.Infrastructure.Idempotency;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
+builder.AddRedisClient("redis");
+
+builder.Services.AddScoped<IdempotencyFilter>();
 
 // Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 

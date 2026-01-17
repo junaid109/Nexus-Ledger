@@ -1,6 +1,6 @@
-using ApexLedger.SettlementService;
+using NexusLedger.SettlementService;
 
-using ApexLedger.ServiceDefaults;
+using NexusLedger.ServiceDefaults;
 
 var builder = Host.CreateApplicationBuilder(args);
 builder.AddServiceDefaults();

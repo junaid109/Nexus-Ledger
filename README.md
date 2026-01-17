@@ -1,17 +1,17 @@
-# ApexLedger 🚀
+# NexusLedger 🚀
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![.NET](https://img.shields.io/badge/.NET-9.0%20%7C%2010.0-purple)]()
 [![Aspire](https://img.shields.io/badge/Orchestration-.NET%20Aspire-blue)]()
 
-**ApexLedger** is a next-generation, high-performance payment ledger system designed for the fintech sector. Engineered for exactly-once processing and absolute data integrity, it leverages a distributed microservices architecture to handle high-throughput financial transactions with ease.
+**NexusLedger** is a next-generation, high-performance payment ledger system designed for the fintech sector. Engineered for exactly-once processing and absolute data integrity, it leverages a distributed microservices architecture to handle high-throughput financial transactions with ease.
 
 ---
 
 ## 🏗️ Architectural Highlights
 
-ApexLedger is built as a greenfield project showcasing modern software engineering patterns:
+NexusLedger is built as a greenfield project showcasing modern software engineering patterns:
 
 - **Microservices Architecture**: Decomposed into domain-centric services (Gateway, Settlement, Reconciliation).
 - **Event-Driven Choreography**: Asynchronous communication via **Apache Kafka** ensures loose coupling and scalability.
@@ -63,7 +63,7 @@ ApexLedger is built as a greenfield project showcasing modern software engineeri
 
 ### Running Locally
 
-ApexLedger uses **.NET Aspire** to orchestrate the entire suite of services and infrastructure (Kafka, Redis, SQL Server) with a single command.
+NexusLedger uses **.NET Aspire** to orchestrate the entire suite of services and infrastructure (Kafka, Redis, SQL Server) with a single command.
 
 1.  **Clone the repository**
     ```bash
@@ -73,7 +73,7 @@ ApexLedger uses **.NET Aspire** to orchestrate the entire suite of services and 
 
 2.  **Run with Aspire**
     ```bash
-    dotnet run --project ApexLedger.AppHost
+    dotnet run --project NexusLedger.AppHost
     ```
 
 3.  **Explore the Dashboard**

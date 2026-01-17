@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="NexusLedger.AppHost/NexusLedger.AppHost.csproj" />
+  <Project Path="NexusLedger.PaymentGateway.Tests/NexusLedger.PaymentGateway.Tests.csproj" />
+  <Project Path="NexusLedger.PaymentGateway/NexusLedger.PaymentGateway.csproj" />
+  <Project Path="NexusLedger.ReconciliationWorker/NexusLedger.ReconciliationWorker.csproj" />
+  <Project Path="NexusLedger.ServiceDefaults/NexusLedger.ServiceDefaults.csproj" />
+  <Project Path="NexusLedger.SettlementService/NexusLedger.SettlementService.csproj" />
+</Solution>

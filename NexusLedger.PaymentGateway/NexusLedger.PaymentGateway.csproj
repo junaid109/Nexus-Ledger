@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspire.StackExchange.Redis" Version="13.1.0" />
+    <PackageReference Include="Confluent.Kafka" Version="2.13.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApexLedger.ServiceDefaults\ApexLedger.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\NexusLedger.ServiceDefaults\NexusLedger.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>

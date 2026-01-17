@@ -1,4 +1,4 @@
-namespace ApexLedger.SettlementService;
+namespace NexusLedger.ReconciliationWorker;
 
 public class Worker(ILogger<Worker> logger) : BackgroundService
 {

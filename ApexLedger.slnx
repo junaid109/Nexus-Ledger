@@ -1,7 +1,0 @@
-<Solution>
-  <Project Path="ApexLedger.AppHost/ApexLedger.AppHost.csproj" />
-  <Project Path="ApexLedger.PaymentGateway/ApexLedger.PaymentGateway.csproj" />
-  <Project Path="ApexLedger.ReconciliationWorker/ApexLedger.ReconciliationWorker.csproj" />
-  <Project Path="ApexLedger.ServiceDefaults/ApexLedger.ServiceDefaults.csproj" />
-  <Project Path="ApexLedger.SettlementService/ApexLedger.SettlementService.csproj" />
-</Solution>

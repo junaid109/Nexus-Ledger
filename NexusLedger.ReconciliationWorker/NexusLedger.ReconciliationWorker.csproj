@@ -4,7 +4,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-ApexLedger.SettlementService-de12f3af-ad95-40ce-8c18-9d85026f3da5</UserSecretsId>
+    <UserSecretsId>dotnet-NexusLedger.ReconciliationWorker-84b35994-92af-4198-b064-a24b56bb6208</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ApexLedger.ServiceDefaults\ApexLedger.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\NexusLedger.ServiceDefaults\NexusLedger.ServiceDefaults.csproj" />
   </ItemGroup>
 </Project>

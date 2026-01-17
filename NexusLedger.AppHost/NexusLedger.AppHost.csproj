@@ -1,9 +1,9 @@
 <Project Sdk="Aspire.AppHost.Sdk/13.1.0">
 
   <ItemGroup>
-    <ProjectReference Include="..\ApexLedger.PaymentGateway\ApexLedger.PaymentGateway.csproj" />
-    <ProjectReference Include="..\ApexLedger.SettlementService\ApexLedger.SettlementService.csproj" />
-    <ProjectReference Include="..\ApexLedger.ReconciliationWorker\ApexLedger.ReconciliationWorker.csproj" />
+    <ProjectReference Include="..\NexusLedger.PaymentGateway\NexusLedger.PaymentGateway.csproj" />
+    <ProjectReference Include="..\NexusLedger.SettlementService\NexusLedger.SettlementService.csproj" />
+    <ProjectReference Include="..\NexusLedger.ReconciliationWorker\NexusLedger.ReconciliationWorker.csproj" />
   </ItemGroup>
 
   <ItemGroup>

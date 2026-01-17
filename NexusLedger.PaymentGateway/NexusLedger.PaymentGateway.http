@@ -1,0 +1,6 @@
+@NexusLedger.PaymentGateway_HostAddress = http://localhost:5065
+
+GET {{NexusLedger.PaymentGateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

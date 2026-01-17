@@ -7,8 +7,9 @@ using Microsoft.Extensions.ServiceDiscovery;
 using OpenTelemetry;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
+using Microsoft.Extensions.Hosting;
 
-namespace Microsoft.Extensions.Hosting;
+namespace NexusLedger.ServiceDefaults;
 
 // Adds common Aspire services: service discovery, resilience, health checks, and OpenTelemetry.
 // This project should be referenced by each service project in your solution.
