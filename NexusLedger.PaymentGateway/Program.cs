@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 builder.AddRedisClient("redis");
+builder.AddKafkaProducer<string, string>("kafka");
 
 builder.Services.AddScoped<IdempotencyFilter>();
 
