@@ -1,9 +1,17 @@
-using NexusLedger.SettlementService;
-
+using Confluent.Kafka;
+using Microsoft.EntityFrameworkCore;
 using NexusLedger.ServiceDefaults;
+using NexusLedger.SettlementService.App;
+using NexusLedger.SettlementService.Infrastructure.Data;
 
 var builder = Host.CreateApplicationBuilder(args);
 builder.AddServiceDefaults();
+builder.AddSqlServerDbContext<LedgerDbContext>("sqlserver");
+builder.AddKafkaConsumer<string, string>("kafka", settings => 
+{
+    settings.Config.GroupId = "settlement-group";
+    settings.Config.AutoOffsetReset = AutoOffsetReset.Earliest;
+});
 builder.Services.AddHostedService<Worker>();
 
 var host = builder.Build();
