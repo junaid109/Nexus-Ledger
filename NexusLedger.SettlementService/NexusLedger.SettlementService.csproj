@@ -17,5 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NexusLedger.ServiceDefaults\NexusLedger.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\NexusLedger.Infrastructure\NexusLedger.Infrastructure.csproj" />
   </ItemGroup>
 </Project>

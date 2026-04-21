@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using NexusLedger.SettlementService.Domain.Entities;
+using NexusLedger.Infrastructure.Domain.Entities;
 
-namespace NexusLedger.SettlementService.Infrastructure.Data;
+namespace NexusLedger.Infrastructure.Data;
 
 public class LedgerDbContext : DbContext
 {
@@ -10,6 +10,7 @@ public class LedgerDbContext : DbContext
     }
 
     public DbSet<LedgerEntry> LedgerEntries { get; set; }
+    public DbSet<Discrepancy> Discrepancies { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -18,9 +19,19 @@ public class LedgerDbContext : DbContext
         modelBuilder.Entity<LedgerEntry>(entity =>
         {
             entity.HasKey(e => e.Id);
-            entity.HasIndex(e => e.TransactionId); // Index for lookups
+            entity.HasIndex(e => e.TransactionId);
             entity.Property(e => e.Amount).HasColumnType("decimal(18,2)");
             entity.Property(e => e.AccountId).IsRequired();
         });
+
+        modelBuilder.Entity<Discrepancy>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.HasIndex(e => e.TransactionId);
+            entity.Property(e => e.AmountLedger).HasColumnType("decimal(18,2)");
+            entity.Property(e => e.AmountBank).HasColumnType("decimal(18,2)");
+        });
     }
 }
+
+

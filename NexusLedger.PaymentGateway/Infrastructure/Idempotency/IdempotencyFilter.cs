@@ -30,7 +30,7 @@ public class IdempotencyFilter : IAsyncActionFilter
         var cachedResponse = await db.StringGetAsync(cacheKey);
         if (!cachedResponse.IsNullOrEmpty)
         {
-            var responseDto = JsonSerializer.Deserialize<IdempotencyRecord>(cachedResponse!);
+            var responseDto = JsonSerializer.Deserialize<IdempotencyRecord>((string)cachedResponse!);
             if (responseDto != null)
             {
                 context.Result = new ObjectResult(responseDto.Value) { StatusCode = responseDto.StatusCode };

@@ -5,4 +5,5 @@
   <Project Path="NexusLedger.ReconciliationWorker/NexusLedger.ReconciliationWorker.csproj" />
   <Project Path="NexusLedger.ServiceDefaults/NexusLedger.ServiceDefaults.csproj" />
   <Project Path="NexusLedger.SettlementService/NexusLedger.SettlementService.csproj" />
+  <Project Path="NexusLedger.Infrastructure/NexusLedger.Infrastructure.csproj" />
 </Solution>

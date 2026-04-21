@@ -1,9 +1,9 @@
 namespace NexusLedger.SettlementService.App;
 
 using Confluent.Kafka;
-using NexusLedger.SettlementService.Domain.Entities;
+using NexusLedger.Infrastructure.Domain.Entities;
 using NexusLedger.SettlementService.Domain.Events;
-using NexusLedger.SettlementService.Infrastructure.Data;
+using NexusLedger.Infrastructure.Data;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 

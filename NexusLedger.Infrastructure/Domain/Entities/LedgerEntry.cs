@@ -1,4 +1,4 @@
-namespace NexusLedger.SettlementService.Domain.Entities;
+namespace NexusLedger.Infrastructure.Domain.Entities;
 
 public enum LedgerEntryType
 {
