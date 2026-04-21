@@ -45,9 +45,9 @@ NexusLedger is a high-performance, event-driven payment ledger system built on .
 - [x] Publish `PaymentValidated` / `SettlementCompleted` events (Logic exists in Worker).
 
 ### Phase 5: Reconciliation Worker
-- [ ] Create mocked External Bank Source (CSV/JSON/Mock API).
-- [ ] Implement Daily Reconciliation Job (IHostedService).
-- [ ] Compare internal SQL Ledger vs External Bank source.
+- [x] Create mocked External Bank Source (CSV/JSON/Mock API).
+- [x] Implement Daily Reconciliation Job (IHostedService).
+- [x] Compare internal SQL Ledger vs External Bank source.
 - [ ] Alerting/Event on discrepancy.
 
 ### Phase 6: Observability, Resilience & Testing
