@@ -1,0 +1,23 @@
+[
+  {
+    "TransactionId": "5f9b4f2c-e161-4c12-8874-987654321000",
+    "Amount": 100.00,
+    "Currency": "USD",
+    "Timestamp": "2026-04-21T10:00:00Z",
+    "Reference": "REF-001"
+  },
+  {
+    "TransactionId": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+    "Amount": 50.00,
+    "Currency": "GBP",
+    "Timestamp": "2026-04-21T11:00:00Z",
+    "Reference": "REF-002"
+  },
+  {
+    "TransactionId": "deadbeef-dead-beef-dead-beefdeadbeef",
+    "Amount": 99.99,
+    "Currency": "USD",
+    "Timestamp": "2026-04-21T12:00:00Z",
+    "Reference": "REF-DISC-001"
+  }
+]
