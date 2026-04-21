@@ -7,7 +7,10 @@ using NexusLedger.ServiceDefaults;
 var builder = Host.CreateApplicationBuilder(args);
 
 builder.AddServiceDefaults();
-builder.AddSqlServerDbContext<LedgerDbContext>("sqlserver");
+builder.AddSqlServerDbContext<LedgerDbContext>("sqlserver", settings => 
+{
+    settings.DisableRetry = false;
+});
 
 builder.Services.AddSingleton<IBankSource>(sp => 
     new JsonBankSource("bank_records.json", sp.GetRequiredService<ILogger<JsonBankSource>>()));

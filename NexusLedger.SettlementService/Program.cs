@@ -6,7 +6,11 @@ using NexusLedger.Infrastructure.Data;
 
 var builder = Host.CreateApplicationBuilder(args);
 builder.AddServiceDefaults();
-builder.AddSqlServerDbContext<LedgerDbContext>("sqlserver");
+builder.AddSqlServerDbContext<LedgerDbContext>("sqlserver", settings => 
+{
+    // Enable retry on failure for SQL Server
+    settings.DisableRetry = false; 
+});
 builder.AddKafkaConsumer<string, string>("kafka", settings => 
 {
     settings.Config.GroupId = "settlement-group";

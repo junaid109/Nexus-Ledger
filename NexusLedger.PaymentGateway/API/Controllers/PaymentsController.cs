@@ -3,6 +3,7 @@ using NexusLedger.PaymentGateway.Domain.Events;
 using NexusLedger.PaymentGateway.Infrastructure.Idempotency;
 using Microsoft.AspNetCore.Mvc;
 using Confluent.Kafka;
+using Polly;
 
 namespace NexusLedger.PaymentGateway.API.Controllers;
 
@@ -39,10 +40,16 @@ public class PaymentsController : ControllerBase
         var message = new Message<string, string>
         {
             Key = transactionId.ToString(),
-            Value = System.Text.Json.JsonSerializer.Serialize(paymentEvent)
+            Value = System.Text.Json.JsonSerializer.Serialize(paymentEvent),
+            Headers = new Headers()
         };
+        NexusLedger.Infrastructure.Messaging.KafkaTracingHelper.InjectTraceHeaders(message.Headers);
 
-        await _producer.ProduceAsync("payments-topic", message);
+        var retryPolicy = Polly.Policy
+            .Handle<KafkaException>()
+            .WaitAndRetryAsync(3, _ => TimeSpan.FromSeconds(1));
+
+        await retryPolicy.ExecuteAsync(() => _producer.ProduceAsync("payments-topic", message));
 
         _logger.LogInformation("PaymentInitiated event published for TransactionId: {TransactionId}", transactionId);
 

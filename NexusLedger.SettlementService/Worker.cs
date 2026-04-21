@@ -6,6 +6,8 @@ using NexusLedger.SettlementService.Domain.Events;
 using NexusLedger.Infrastructure.Data;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using NexusLedger.Infrastructure.Messaging;
 
 
 public class Worker : BackgroundService
@@ -13,6 +15,7 @@ public class Worker : BackgroundService
     private readonly ILogger<Worker> _logger;
     private readonly IConsumer<string, string> _consumer;
     private readonly IServiceProvider _serviceProvider;
+    private static readonly ActivitySource _activitySource = new ActivitySource("NexusLedger.SettlementService");
 
     public Worker(ILogger<Worker> logger, IConsumer<string, string> consumer, IServiceProvider serviceProvider)
     {
@@ -44,6 +47,16 @@ public class Worker : BackgroundService
                 var result = _consumer.Consume(stoppingToken);
                 if (result != null)
                 {
+                    var parentContext = KafkaTracingHelper.ExtractTraceContext(result.Message.Headers);
+                    using var activity = _activitySource.StartActivity("ProcessPayment", ActivityKind.Consumer, parentContext);
+                    
+                    if (activity != null)
+                    {
+                        activity.SetTag("messaging.system", "kafka");
+                        activity.SetTag("messaging.destination", "payments-topic");
+                        activity.SetTag("messaging.kafka.message_key", result.Message.Key);
+                    }
+
                     await ProcessPaymentAsync(result.Message.Value, stoppingToken);
                 }
             }
