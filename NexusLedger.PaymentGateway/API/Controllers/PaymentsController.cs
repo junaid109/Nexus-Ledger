@@ -31,8 +31,8 @@ public class PaymentsController : ControllerBase
             TransactionId = transactionId,
             Amount = request.Amount,
             Currency = request.Currency,
-            FromAccount = request.FromAccount,
-            ToAccount = request.ToAccount,
+            FromAccount = request.FromAccount.ToString(),
+            ToAccount = request.ToAccount.ToString(),
             Timestamp = DateTime.UtcNow
         };
 

@@ -2,7 +2,7 @@ using Confluent.Kafka;
 using Microsoft.EntityFrameworkCore;
 using NexusLedger.ServiceDefaults;
 using NexusLedger.SettlementService.App;
-using NexusLedger.SettlementService.Infrastructure.Data;
+using NexusLedger.Infrastructure.Data;
 
 var builder = Host.CreateApplicationBuilder(args);
 builder.AddServiceDefaults();
